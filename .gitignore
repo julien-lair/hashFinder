@@ -1,0 +1,8 @@
+*.o
+*.out
+docker-compose.override.yml
+*.tar
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
