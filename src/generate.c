@@ -27,12 +27,31 @@ void generate_t3c(char* input_file_path, char* output_file_path, char* algorithm
         if (len > 0 && ligne[len-1] == '\n') {
             ligne[len-1] = '\0';
         }
+        if(strcmp(algorithm, "SHA512") == 0){
+            char hash[SHA512_DIGEST_LENGTH * 2 + 1];
+            get_hash_sha512(ligne, hash);
+            fprintf(outputFile,"%s:%s\n",ligne,hash);
+        }else if(strcmp(algorithm, "SHA384") == 0){
+            char hash[SHA384_DIGEST_LENGTH * 2 + 1];
+            get_hash_sha384(ligne, hash);
+            fprintf(outputFile,"%s:%s\n",ligne,hash);
+        }else if(strcmp(algorithm, "SHA256") == 0){
+            char hash[SHA256_DIGEST_LENGTH * 2 + 1];
+            get_hash_sha256(ligne, hash);
+            fprintf(outputFile,"%s:%s\n",ligne,hash);
+        }else if(strcmp(algorithm, "SHA224") == 0){
+            char hash[SHA224_DIGEST_LENGTH * 2 + 1];
+            get_hash_sha224(ligne, hash);
+            fprintf(outputFile,"%s:%s\n",ligne,hash);
+        }else if(strcmp(algorithm, "MD5") == 0){
+            char hash[MD5_DIGEST_LENGTH * 2 + 1];
+            get_hash_md5(ligne, hash);
+            fprintf(outputFile,"%s:%s\n",ligne,hash);
+        }else{
+            printf("Algorithme inconnu: %s. \nAuthorisée: SHA512, SHA384, SHA256, SHA224, MD5.",algorithm);
+            exit(1);
+        }
         
-        char hash[SHA256_DIGEST_LENGTH * 2 + 1];
-        get_hash_sha256(ligne, hash);
-        // printf("%s:%s\n",ligne,hash);
-        //écrire dans le fichier de sortie
-        fprintf(outputFile,"%s:%s\n",ligne,hash);
     }
     free(ligne);
     fclose(inputFile);

@@ -14,7 +14,7 @@ int main(int argc,char** argv){
     bool lookup_mode = false;
     char* input_file = NULL;
     char* output_file = NULL;
-    char* algorithm = NULL;
+    char* algorithm = "SHA256"; //algo par default
 
     int i;
     for(i = 1; i < argc; i++){
@@ -46,9 +46,6 @@ int main(int argc,char** argv){
         return 1;
     }
     else if(generation_mode == true && input_file != NULL && output_file != NULL){
-        if(algorithm == NULL){
-            algorithm = "sha256"; // algo par défault
-        }
         generate_t3c(input_file, output_file, algorithm);
     }else{
         printf("Usage pour la génération: ./main -g -f <fichier_entrée> -o <fichier_sortie> [-algo <algorithme>]\n");

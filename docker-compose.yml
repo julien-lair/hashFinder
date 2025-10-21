@@ -4,4 +4,6 @@ services:
     volumes:
       - ./t3c:/usr/src/hasfinder/t3c
       - ./rockyou:/usr/src/hasfinder/rockyou
-    command: ["./hashfinder", "-g", "-f", "rockyou/test.txt", "-o", "t3c/sortie.t3c"]
+    stdin_open: true
+    tty: true
+    command: ["./hashfinder", "-g", "-f", "rockyou/test.txt", "-o", "t3c/sortie-defualt.t3c"]
