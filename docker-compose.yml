@@ -1,0 +1,7 @@
+services:
+  hashfinder:
+    build: .
+    volumes:
+      - ./t3c:/usr/src/hasfinder/t3c
+      - ./rockyou:/usr/src/hasfinder/rockyou
+    command: ["./hashfinder", "-g", "-f", "rockyou/test.txt", "-o", "t3c/sortie.t3c"]
