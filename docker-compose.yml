@@ -1,9 +1,0 @@
-services:
-  hashfinder:
-    build: .
-    volumes:
-      - ./t3c:/usr/src/hasfinder/t3c
-      - ./rockyou:/usr/src/hasfinder/rockyou
-    stdin_open: true
-    tty: true
-    command: ["./hashfinder", "-g", "-f", "rockyou/test.txt", "-o", "t3c/sortie-defualt.t3c"]

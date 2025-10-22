@@ -51,3 +51,5 @@ void get_hash_md5(char* input, char* hash_output) {
     }
     hash_output[MD5_DIGEST_LENGTH * 2] = '\0';
 }
+
+

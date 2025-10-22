@@ -3,6 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 #include "generate.c"
+#include "lookup.c"
 
 int main(int argc,char** argv){
     //./hashfinder -g -f data/dictionnaire.txt -o data/table.t3c -algo sha256
@@ -47,6 +48,8 @@ int main(int argc,char** argv){
     }
     else if(generation_mode == true && input_file != NULL && output_file != NULL){
         generate_t3c(input_file, output_file, algorithm);
+    }else if(lookup_mode == true && input_file != NULL){
+        lookup_t3c(input_file);
     }else{
         printf("Usage pour la génération: ./main -g -f <fichier_entrée> -o <fichier_sortie> [-algo <algorithme>]\n");
         printf("Usage pour la recherche: ./main -l -f <fichier_table>\n");

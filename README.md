@@ -1,6 +1,3 @@
-docker pull gcc:12
-docker build -t hashfinder .
-docker run --rm -it hashfinder
+gcc -o hashfinder src/main.c -lssl -lcrypto
 
-docker-compose build
-docker-compose up
+compilation débug: gcc -g -O0 -o hashfinder src/main.c -lssl -lcrypto
