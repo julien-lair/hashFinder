@@ -11,7 +11,9 @@ Par la suite, il est possible de rechercher un hash dans la liste de condensats 
 ### Paramètres
  - `-g` Mode génération 
 
- - `-f` Le fichier d'entrée (par exemple rockyou/rockyou_14M.txt qui regroupe 14 millions de mots de passe provenant d'un data breach en 2009 : [rockyou.txt](https://github.com/RykerWilder/rockyou.txt))
+ - `-f` fichier d'entrée (par exemple:  [rockyou.txt](https://github.com/RykerWilder/rockyou.txt), 14 M de mots de passe d'une fuite de 2009). On peut utiliser rockyou_9M.txt (les 9 premiers millions, fichier tronqué à cause de la limite GitHub de 100 Mo). 
+ 
+
 
 
  - `-o` Le fichier de sortie (par exemple t3c/rockyou.t3c)
