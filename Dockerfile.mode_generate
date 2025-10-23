@@ -1,0 +1,6 @@
+FROM gcc:13
+WORKDIR /app
+COPY . .
+RUN apt-get update && apt-get install -y libssl-dev make && apt-get clean
+RUN make clean && make
+CMD ["./hashfinder","-g","-f","rockyou/rockyou.txt","-o","t3c/rockyou.t3c"]

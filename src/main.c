@@ -51,8 +51,8 @@ int main(int argc,char** argv){
     }else if(lookup_mode == true && input_file != NULL){
         lookup_t3c(input_file);
     }else{
-        printf("Usage pour la génération: ./main -g -f <fichier_entrée> -o <fichier_sortie> [-algo <algorithme>]\n");
-        printf("Usage pour la recherche: ./main -l -f <fichier_table>\n");
+        printf("Usage pour la génération: ./hashfinder -g -f <fichier_entrée> -o <fichier_sortie> [-algo <algorithme>]\n");
+        printf("Usage pour la recherche: ./hashfinder -l -f <fichier_table>\n");
         return 1;
     }
     

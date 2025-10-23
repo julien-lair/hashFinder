@@ -5,12 +5,13 @@
 #include "arbreBinaire.c"
 
 void lookup_t3c(char *input_file_path){
-   
+    printf("=============== Recherche de hash ===============\n");
+    printf("\nChargement en mémoire de la table T3C\n");
     Node_Tree* rootNode = create_tree(input_file_path);
-   
+    printf("Table charger avec succès\n\n");
     //on récupère l'entré utilisateur
     bool continue_while = true;
-    printf("Entrez le hash pour obtenir sont claire\nTapez `exit` pour quitter\n");
+    printf("Entrez le hash pour obtenir sont claire\nTapez `exit` pour quitter.\n");
 
     while(continue_while == true){
        char* user_entry = NULL;
@@ -25,9 +26,9 @@ void lookup_t3c(char *input_file_path){
             Node_Tree* nodeFind = find_node(user_entry,rootNode);
             if(nodeFind == NULL){
                 //pas trouvé
-                printf("pas trouvé\n");
+                printf("%s --> Aucune correspondance trouvé\n\n",user_entry);
             }else{
-                printf("--> %s\n",nodeFind->clair);
+                printf("%s --> %s\n\n",user_entry,nodeFind->clair);
             }
         }
     }
