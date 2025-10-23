@@ -60,7 +60,7 @@ Node_Tree* create_tree(char* input_file_path){
     }
 
 
-    //on parcour chaque ligne du fichier
+    //on parcour chaques lignes du fichier
     char *ligne = NULL;
     size_t taille = 0;
     while ((getline(&ligne, &taille, t3cFile)) != -1) {
@@ -69,10 +69,10 @@ Node_Tree* create_tree(char* input_file_path){
         char *hash  = strtok(NULL, ":"); 
         */
 
-        ligne[strcspn(ligne, "\n")] = '\0'; //on supprime le carcatere retour à la ligne
+        ligne[strcspn(ligne, "\n")] = '\0'; //on supprime le caractère retour à la ligne
         
         char *last_colon = strrchr(ligne, ':'); //on récupère la dernière occurence de : sur la ligne
-        *last_colon = '\0'; //remplace le dernier : par un cracatere null
+        *last_colon = '\0'; //remplace le dernier : par un caractère null
         char *clair = ligne; 
         char *hash  = last_colon + 1;
 

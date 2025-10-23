@@ -7,7 +7,6 @@
 
 int main(int argc,char** argv){
     //./hashfinder -g -f data/dictionnaire.txt -o data/table.t3c -algo sha256
-
     //./hashfinder -l -f data/table.t3c
     //echo "5d41402abc4b2a76b9719d911017c592" | ./hashfinder -l -f data/table.t3c
     //cat data/hashes.txt | ./hashfinder -l -f data/table.t3c
@@ -15,7 +14,7 @@ int main(int argc,char** argv){
     bool lookup_mode = false;
     char* input_file = NULL;
     char* output_file = NULL;
-    char* algorithm = "SHA256"; //algo par default
+    char* algorithm = "SHA256"; //algo par défault
 
     int i;
     for(i = 1; i < argc; i++){

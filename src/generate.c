@@ -3,8 +3,8 @@
 #include "hash.c"
 
 void generate_t3c(char* input_file_path, char* output_file_path, char* algorithm){
-    // Générationd e la table T3C
-    //fichier d'entré
+    // Génération de la table T3C
+    //fichier d'entrée
     FILE *inputFile;
     inputFile = fopen(input_file_path,"r");
     if (inputFile == NULL){
@@ -22,7 +22,7 @@ void generate_t3c(char* input_file_path, char* output_file_path, char* algorithm
     size_t taille = 0;
     printf("Génération de la table T3C\n");
     while ((getline(&ligne, &taille, inputFile)) != -1) {
-        //on suppirme le carcateres de fin de ligne 
+        //on supprime le caractères de fin de ligne 
         size_t len = strlen(ligne);
         if (len > 0 && ligne[len-1] == '\n') {
             ligne[len-1] = '\0';
@@ -56,7 +56,7 @@ void generate_t3c(char* input_file_path, char* output_file_path, char* algorithm
         
         
     }
-    printf("Table T3C générer avec succès.\n");
+    printf("Table T3C générée avec succès.\n");
     free(ligne);
     fclose(inputFile);
     fclose(outputFile);
